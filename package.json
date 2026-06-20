@@ -1,0 +1,24 @@
+{
+  "name": "oneprotect-playwright-framework",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript automation framework for apps using OneProtect SSO redirect login.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:auth": "playwright test tests/setup/auth.setup.ts --headed",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "install:browsers": "playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "^25.9.1",
+    "dotenv": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0"
+  }
+}

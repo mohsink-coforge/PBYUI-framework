@@ -1,0 +1,6 @@
+{
+  "defaultUser": {
+    "role": "standard_user",
+    "description": "Credentials are loaded from .env, not from this file."
+  }
+}
