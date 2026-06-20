@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OneProtect Playwright Automation Framework
 
 This is a Playwright TypeScript framework for applications that redirect to OneProtect/SSO login and then return to the application home page.
@@ -134,3 +135,5 @@ For GitHub Actions, add these repository secrets:
 - `BASE_URL`
 - `APP_USER`
 - `APP_PASS`
+=======
+>>>>>>> 881e2c3b5216ac6b40df5afbce29769a202258b7
