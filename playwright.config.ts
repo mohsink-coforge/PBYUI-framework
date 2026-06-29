@@ -24,6 +24,7 @@ use: {
   video: 'retain-on-failure',
   actionTimeout: 30_000,
   navigationTimeout: 60_000,
+   ignoreHTTPSErrors: true,
 
   permissions: ['geolocation'],
   geolocation: {
