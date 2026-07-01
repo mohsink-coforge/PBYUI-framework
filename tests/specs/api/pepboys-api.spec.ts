@@ -571,7 +571,7 @@ test(`04 - Home Page > Summary`, async ({ request, page }) => {
   await runPostmanStep(3, request, page);
 });
 
-test.skip(`05 - Home Page > Work Order List_Shop Activity`, async ({ request, page }) => {
+test(`05 - Home Page > Work Order List_Shop Activity`, async ({ request, page }) => {
   await runPostmanStep(4, request, page);
 });
 
