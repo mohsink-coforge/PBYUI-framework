@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "647848b8-9a4e-4da6-a80e-b5a309fef5fd",
-    "name": "Pepboys_AllEndpoints",
+    "name": "Pepboys_AllEndpoints QA",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "55490799",
     "_collection_link": "https://go.postman.co/collection/55490799-647848b8-9a4e-4da6-a80e-b5a309fef5fd?source=collection_link"
@@ -167,7 +167,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"code\": \"Lvo0lmmpWG4ZlpP9~AhcyYwymPr\",\n    \"codeVerifier\": \"sPik9YoGq9Pm7wTXmVaeoWJPKQVSzEzUjjfyq2zwxTo\",\n    \"latitude\": 40.250001,\n    \"longitude\": -75.250001\n}",
+              "raw": "{\n    \"code\": \"tjYn~2JKrnm8JXC8F8ToV807ynh\",\n    \"codeVerifier\": \"sPik9YoGq9Pm7wTXmVaeoWJPKQVSzEzUjjfyq2zwxTo\",\n    \"latitude\": 40.250001,\n    \"longitude\": -75.250001\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1178,7 +1178,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -1197,7 +1196,10 @@
                   "    pm.expect(jsonData).to.not.be.null;",
                   "    pm.expect(jsonData).to.not.be.empty;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -1281,7 +1283,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}/customer/api/v1/customers/79608936001779517831014?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}/customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}"
               ],
@@ -1290,7 +1292,7 @@
                 "api",
                 "v1",
                 "customers",
-                "79608936001779517831014"
+                "14081608431777551058367"
               ],
               "query": [
                 {
@@ -1976,7 +1978,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -1989,7 +1990,10 @@
                   "pm.test('Response has a JSON body', function () {",
                   "    pm.response.to.be.json;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -2078,7 +2082,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"customerId\": \"14088208911777551058368\",\r\n    \"workOrderNumber\": {{workOrderId}},\r\n    \"customerType\": \"Retail\",\r\n    \"firstName\": \"Ajij\",\r\n    \"lastName\": \"Shekh\",\r\n    \"phoneNumbers\": [\r\n        {\r\n            \"id\": 9119069,\r\n            \"primary\": false,\r\n            \"phoneType\": \"Mobile – Personal\",\r\n            \"phoneNumber\": \"7474554455\"\r\n        },\r\n        {\r\n            \"id\": 9119070,\r\n            \"primary\": false,\r\n            \"phoneType\": \"Mobile – Personal\",\r\n            \"phoneNumber\": \"9377431125\"\r\n        }\r\n    ],\r\n    \"emails\": [\r\n        {\r\n            \"id\": 4958674,\r\n            \"email\": \"aseikh@pepboys.com\",\r\n            \"emlOptIn\": false,\r\n            \"primary\": false\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressLine1\": \"36 East 8th Street\",\r\n        \"addressLine2\": null,\r\n        \"postalCode\": \"99705\",\r\n        \"city\": \"North Pole\",\r\n        \"state\": \"AK\",\r\n        \"country\": \"USA\"\r\n    },\r\n    \"vehicleIds\": [\r\n        {\r\n            \"vehicleId\": \"35\",\r\n            \"isSelected\": true\r\n        },\r\n        {\r\n            \"vehicleId\": \"1860121\",\r\n            \"isSelected\": false\r\n        },\r\n        {\r\n            \"vehicleId\": \"6852202\",\r\n            \"isSelected\": false\r\n        }\r\n    ],\r\n    \"isNoVehicle\": false,\r\n    \"emailIds\": [],\r\n    \"phoneIds\": []\r\n}",
+              "raw": "{\r\n    \"customerId\": \"14081608431777551058367\",\r\n    \"workOrderNumber\": {{workOrderId}},\r\n    \"customerType\": \"Retail\",\r\n    \"firstName\": \"Ajij\",\r\n    \"lastName\": \"Shekh\",\r\n    \"phoneNumbers\": [\r\n        {\r\n            \"id\": 9119069,\r\n            \"primary\": false,\r\n            \"phoneType\": \"Mobile – Personal\",\r\n            \"phoneNumber\": \"7474554455\"\r\n        },\r\n        {\r\n            \"id\": 9119070,\r\n            \"primary\": false,\r\n            \"phoneType\": \"Mobile – Personal\",\r\n            \"phoneNumber\": \"9377431125\"\r\n        }\r\n    ],\r\n    \"emails\": [\r\n        {\r\n            \"id\": 4958674,\r\n            \"email\": \"aseikh@pepboys.com\",\r\n            \"emlOptIn\": false,\r\n            \"primary\": false\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressLine1\": \"36 East 8th Street\",\r\n        \"addressLine2\": null,\r\n        \"postalCode\": \"99705\",\r\n        \"city\": \"North Pole\",\r\n        \"state\": \"AK\",\r\n        \"country\": \"USA\"\r\n    },\r\n    \"vehicleIds\": [\r\n        {\r\n            \"vehicleId\": \"35\",\r\n            \"isSelected\": true\r\n        },\r\n        {\r\n            \"vehicleId\": \"1860121\",\r\n            \"isSelected\": false\r\n        },\r\n        {\r\n            \"vehicleId\": \"6852202\",\r\n            \"isSelected\": false\r\n        }\r\n    ],\r\n    \"isNoVehicle\": false,\r\n    \"emailIds\": [],\r\n    \"phoneIds\": []\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2106,7 +2110,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -2124,7 +2127,10 @@
                   "    var jsonData = pm.response.json();",
                   "    pm.expect(jsonData).to.not.be.empty;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -2212,7 +2218,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/14088208911777551058368?workOrderId=10015258",
+              "raw": "{{QA}}customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -2220,12 +2226,12 @@
                 "api",
                 "v1",
                 "customers",
-                "14088208911777551058368"
+                "14081608431777551058367"
               ],
               "query": [
                 {
                   "key": "workOrderId",
-                  "value": "10015258"
+                  "value": "{{workOrderId}}"
                 }
               ]
             }
@@ -3310,7 +3316,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -3329,7 +3334,10 @@
                   "pm.test('Response body is not empty', function () {",
                   "    pm.expect(pm.response.text()).to.not.be.empty;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -3416,7 +3424,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/79608936001779517831014?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -3424,7 +3432,7 @@
                 "api",
                 "v1",
                 "customers",
-                "79608936001779517831014"
+                "14081608431777551058367"
               ],
               "query": [
                 {
@@ -4324,7 +4332,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"customerId\": \"79608936001779517831014\",\r\n    \"color\": \"\",\r\n    \"mileage\": \"2500\",\r\n    \"licensePlate\": {\r\n        \"number\": \"s\",\r\n        \"state\": \"CT\"\r\n    }\r\n}",
+              "raw": "{\r\n    \"customerId\": \"55559620561769515562084\",\r\n    \"color\": \"\",\r\n    \"mileage\": \"2500\",\r\n    \"licensePlate\": {\r\n        \"number\": \"s\",\r\n        \"state\": \"CT\"\r\n    }\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5246,7 +5254,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/79608936001779517831014?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -5254,7 +5262,7 @@
                 "api",
                 "v1",
                 "customers",
-                "79608936001779517831014"
+                "14081608431777551058367"
               ],
               "query": [
                 {
@@ -5507,7 +5515,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"contactMethod\": \"IN_PERSON\",\r\n    \"authorizedBy\": \"Ajij Shekh\",\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": 80768414,\r\n            \"lineNo\": 1,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        },\r\n        {\r\n            \"appointmentId\": 80768414,\r\n            \"lineNo\": 2,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        }\r\n    ]\r\n}",
+              "raw": "{\r\n    \"contactMethod\": \"IN_PERSON\",\r\n    \"authorizedBy\": \"Ajij Shekh\",\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": 80768495,\r\n            \"lineNo\": 1,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        },\r\n        {\r\n            \"appointmentId\": 80768495,\r\n            \"lineNo\": 2,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        }\r\n    ]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5895,7 +5903,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/79608936001779517831014?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/55559620561769515562084?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -5903,7 +5911,7 @@
                 "api",
                 "v1",
                 "customers",
-                "79608936001779517831014"
+                "55559620561769515562084"
               ],
               "query": [
                 {
@@ -6788,7 +6796,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"status\": \"service complete\",\r\n    \"customerWaitingOrDropping\": \"DROPPED_OFF\",\r\n    \"phoneCall\": \"9377431125\",\r\n    \"textMsg\": \"9377431125\",\r\n    \"email\": \"aseikh@pepboys.com\"\r\n}",
+              "raw": "{\r\n    \"status\": \"service complete\",\r\n    \"customerWaitingOrDropping\": \"DROPPED_OFF\",\r\n    \"phoneCall\": \"9377431125\",\r\n    \"textMsg\": \"9377431125\",\r\n    \"email\": \"ajij.shekh@encora.com\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -7180,7 +7188,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/79608936001779517831014?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/55559620561769515562084?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -7188,7 +7196,7 @@
                 "api",
                 "v1",
                 "customers",
-                "79608936001779517831014"
+                "55559620561769515562084"
               ],
               "query": [
                 {
@@ -7577,7 +7585,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -7590,7 +7597,10 @@
                   "pm.test('Response has a JSON body', function () {",
                   "    pm.response.to.be.json;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -7679,7 +7689,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"status\": \"Ready for Pickup\",\r\n    \"customerWaitingOrDropping\": \"DROPPED_OFF\",\r\n    \"phoneCall\": \"9377431125\",\r\n    \"textMsg\": \"9377431125\",\r\n    \"email\": \"aseikh@pepboys.com\"\r\n}",
+              "raw": "{\r\n    \"status\": \"Ready for Pickup\",\r\n    \"customerWaitingOrDropping\": \"DROPPED_OFF\",\r\n    \"phoneCall\": \"9377431125\",\r\n    \"textMsg\": \"9377431125\",\r\n    \"email\": \"ajij.shekh@encora.com\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -7699,14 +7709,6 @@
                 "service-status"
               ]
             }
-          },
-          "response": []
-        },
-        {
-          "name": "New Request",
-          "request": {
-            "method": "GET",
-            "header": []
           },
           "response": []
         }

@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "PBYUI-framework Docs": {
+      "type": "sse",
+      "url": "https://gitmcp.io/mohsink-coforge/PBYUI-framework"
+    }
+  }
+}
