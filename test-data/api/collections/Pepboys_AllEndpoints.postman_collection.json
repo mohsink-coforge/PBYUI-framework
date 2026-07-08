@@ -167,7 +167,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"code\": \"tjYn~2JKrnm8JXC8F8ToV807ynh\",\n    \"codeVerifier\": \"sPik9YoGq9Pm7wTXmVaeoWJPKQVSzEzUjjfyq2zwxTo\",\n    \"latitude\": 40.250001,\n    \"longitude\": -75.250001\n}",
+              "raw": "{\n    \"code\": \"r__XryFRtTtPzlqQp9ZnXxuC7uE\",\n    \"codeVerifier\": \"sPik9YoGq9Pm7wTXmVaeoWJPKQVSzEzUjjfyq2zwxTo\",\n    \"latitude\": 40.250001,\n    \"longitude\": -75.250001\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2921,7 +2921,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200 or 201', function () {",
                   "    pm.expect(pm.response.code).to.be.oneOf([",
@@ -2939,7 +2938,10 @@
                   "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
                   "    pm.response.to.be.json;",
                   "})"
-                ]
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -3455,7 +3457,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -3473,8 +3474,29 @@
                   "",
                   "pm.test('Response body is not empty', function () {",
                   "    pm.expect(pm.response.text()).to.not.be.empty;",
-                  "})"
-                ]
+                  "})",
+                  "",
+                  "// Parse JSON response",
+                  "let response = pm.response.json();",
+                  "",
+                  "// Check if data array exists and has records",
+                  "if (response.data && response.data.length > 0) {",
+                  "",
+                  "    // Get appointmentId from first object",
+                  "    let appointmentId = response.data[0].appointmentId;",
+                  "",
+                  "    // Save as Environment Variable",
+                  "    pm.environment.set(\"appointmentId\", appointmentId);",
+                  "",
+                  "    console.log(\"Appointment ID:\", appointmentId);",
+                  "",
+                  "} else {",
+                  "    console.log(\"No appointmentId found.\");",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -3820,7 +3842,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": 80768414,\r\n            \"lineNo\": 1,\r\n            \"activeTechnicianIds\": [\r\n                508692\r\n            ]\r\n        },\r\n        {\r\n            \"appointmentId\": 80768414,\r\n            \"lineNo\": 2,\r\n            \"activeTechnicianIds\": [\r\n                508692\r\n            ]\r\n        }\r\n    ]\r\n}",
+              "raw": "{\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": {{appointmentId}},\r\n            \"lineNo\": 1,\r\n            \"activeTechnicianIds\": [\r\n                369886\r\n            ]\r\n        },\r\n        {\r\n            \"appointmentId\": {{appointmentId}},\r\n            \"lineNo\": 2,\r\n            \"activeTechnicianIds\": [\r\n                369886\r\n            ]\r\n        }\r\n    ]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5285,7 +5307,6 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () {",
                   "    pm.response.to.have.status(200);",
@@ -5301,8 +5322,23 @@
                   "",
                   "pm.test('Response body is not empty', function () {",
                   "    pm.expect(pm.response.text()).to.not.be.empty;",
-                  "})"
-                ]
+                  "})",
+                  "",
+                  "// Appointment ID GET",
+                  "let response = pm.response.json();",
+                  "",
+                  "// Get appointmentId from first authorizeLine",
+                  "let appointmentId = response.data.authorizeLines[0].appointmentId;",
+                  "",
+                  "// Save as Environment Variable",
+                  "pm.environment.set(\"appointmentId\", appointmentId);",
+                  "",
+                  "// Print in Console",
+                  "console.log(\"Appointment ID:\", appointmentId);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
               }
             }
           ],
@@ -5515,7 +5551,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"contactMethod\": \"IN_PERSON\",\r\n    \"authorizedBy\": \"Ajij Shekh\",\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": 80768495,\r\n            \"lineNo\": 1,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        },\r\n        {\r\n            \"appointmentId\": 80768495,\r\n            \"lineNo\": 2,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        }\r\n    ]\r\n}",
+              "raw": "{\r\n    \"contactMethod\": \"PHONE\",\r\n    \"authorizedBy\": \"Glenn James\",\r\n    \"lines\": [\r\n        {\r\n            \"appointmentId\": {{appointmentId}},\r\n            \"lineNo\": 1,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        },\r\n        {\r\n            \"appointmentId\": {{appointmentId}},\r\n            \"lineNo\": 2,\r\n            \"authorized\": true,\r\n            \"declined\": false\r\n        }\r\n    ],\r\n    \"phoneNumber\": \"9377431125\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5903,7 +5939,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/55559620561769515562084?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -5911,7 +5947,7 @@
                 "api",
                 "v1",
                 "customers",
-                "55559620561769515562084"
+                "14081608431777551058367"
               ],
               "query": [
                 {
@@ -7188,7 +7224,7 @@
               }
             ],
             "url": {
-              "raw": "{{QA}}customer/api/v1/customers/55559620561769515562084?workOrderId={{workOrderId}}",
+              "raw": "{{QA}}customer/api/v1/customers/14081608431777551058367?workOrderId={{workOrderId}}",
               "host": [
                 "{{QA}}customer"
               ],
@@ -7196,7 +7232,7 @@
                 "api",
                 "v1",
                 "customers",
-                "55559620561769515562084"
+                "14081608431777551058367"
               ],
               "query": [
                 {
