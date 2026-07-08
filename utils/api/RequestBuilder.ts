@@ -27,19 +27,26 @@ function required(name: string): string {
 }
 
 export function getApiBaseUrl(): string {
+
   const apiEnv = (process.env.API_ENV || 'east').toLowerCase();
 
-  const value = apiEnv === 'west' ? process.env.API_QA_WEST : process.env.API_QA_EAST;
+  const environments: Record<string, string | undefined> = {
+    east: process.env.API_QA_EAST,
+    west: process.env.API_QA_WEST,
+    shopx: process.env.API_SHOPX,
+  };
+
+  const value = environments[apiEnv];
 
   if (!value) {
     throw new Error(
-      apiEnv === 'west'
-        ? 'Missing API_QA_WEST in .env'
-        : 'Missing API_QA_EAST in .env'
+      `Unknown API environment '${apiEnv}'. Supported values: east, west, shopx`
     );
   }
 
-  return value.endsWith('/') ? value : `${value}/`;
+  return value.endsWith('/')
+    ? value
+    : `${value}/`;
 }
 
 function replaceRuntimeVariables(value: string): string {
@@ -52,7 +59,8 @@ function replaceRuntimeVariables(value: string): string {
     .replace(/{{refreshToken}}/g, runtime.refreshToken || '')
     .replace(/{{authToken}}/g, runtime.authToken || '')
     .replace(/{{geoToken}}/g, runtime.geoToken || '')
-    .replace(/{{workOrderId}}/g, runtime.workOrderId || '');
+    .replace(/{{workOrderId}}/g, runtime.workOrderId || '')
+    .replace(/{{appointmentId}}/g, runtime.appointmentId || '');
 }
 
 export function buildUrl(step: PostmanStep): string {

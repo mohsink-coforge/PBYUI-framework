@@ -4,6 +4,7 @@ export type RuntimeVariables = {
   authToken?: string;
   geoToken?: string;
   workOrderId?: string;
+  appointmentId?: string;
 };
 
 export type PostmanStep = {

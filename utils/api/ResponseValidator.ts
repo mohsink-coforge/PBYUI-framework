@@ -92,6 +92,16 @@ export async function updateRuntimeVariables(
 
     console.log(`Work Order ID: ${runtime.workOrderId}`);
   }
+  if (step.name === 'Line Items') {
+  const body = JSON.parse(responseText);
+
+  runtime.appointmentId =
+    body?.data?.lines?.[0]?.appointmentId?.toString() || '';
+
+  saveRuntime();
+
+  console.log(`Appointment ID : ${runtime.appointmentId}`);
+}
 }
 
 export function expectedStatusesFor(step: PostmanStep): number[] {
