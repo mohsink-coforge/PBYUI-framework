@@ -11,12 +11,15 @@
     "report": "playwright show-report",
     "codegen": "playwright codegen",
     "install:browsers": "playwright install",
+    "AWSSecretVerification": "npx playwright test tests/specs/AWSSecretVerification.spec.ts --headed",
     "api:east": "cross-env API_ENV=east npx playwright test tests/specs/api/pepboys-api.spec.ts --headed --workers=1 --reporter=html --output=test-results/east",
     "api:west": "cross-env API_ENV=west npx playwright test tests/specs/api/pepboys-api.spec.ts  --headed --workers=1 --reporter=html --output=test-results/west",
     "api:shopx": "cross-env API_ENV=shopx npx playwright test tests/specs/api/pepboys-api.spec.ts --headed --workers=1 --reporter=html --output=test-results/shopx",
     "api:all": "npm-run-all --parallel api:east api:west api:shopx",
     "api:master-report": "node utils/api/MasterApiSummary.js",
     "api:all:report": "npm-run-all --parallel api:east api:west api:shopx && npm run api:master-report --reporter=html --output=test-results/masterreport"
+
+
   },
   "devDependencies": {
     "@playwright/test": "latest",
